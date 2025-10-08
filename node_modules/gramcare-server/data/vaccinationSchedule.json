@@ -1,0 +1,285 @@
+{
+  "vaccinationSchedule": {
+    "birth": [
+      {
+        "vaccine": "BCG",
+        "disease": "Tuberculosis",
+        "dose": "Single dose",
+        "description": {
+          "english": "BCG vaccine protects against tuberculosis. Given at birth or as soon as possible.",
+          "hindi": "बीसीजी का टीका तपेदिक से बचाता है। जन्म के समय या जितनी जल्दी हो सके दिया जाता है।",
+          "bengali": "বিসিজি টিকা যক্ষ্মা থেকে রক্ষা করে। জন্মের সময় বা যত তাড়াতাড়ি সম্ভব দেওয়া হয়।",
+          "assamese": "বিচিজি টিকাই যক্ষ্মাৰ পৰা ৰক্ষা কৰে। জন্মৰ সময়ত বা যিমান সোনকালে সম্ভৱ দিয়া হয়।",
+          "telugu": "బిసిజి వ్యాక్సిన్ క్షయవ్యాధి నుండి రక్షిస్తుంది. పుట్టినప్పుడు లేదా వీలైనంత త్వరగా ఇవ్వబడుతుంది."
+        }
+      },
+      {
+        "vaccine": "OPV-0",
+        "disease": "Polio",
+        "dose": "Birth dose",
+        "description": {
+          "english": "First polio vaccine dose given at birth to provide early protection.",
+          "hindi": "पोलियो का पहला टीका जन्म के समय दिया जाता है जो शुरुआती सुरक्षा प्रदान करता है।",
+          "bengali": "পোলিও টিকার প্রথম ডোজ জন্মের সময় দেওয়া হয় প্রাথমিক সুরক্ষার জন্য।",
+          "assamese": "পোলিঅ'ৰ প্ৰথম টিকা জন্মৰ সময়ত দিয়া হয় প্ৰাৰম্ভিক সুৰক্ষাৰ বাবে।",
+          "telugu": "పోలియో మొదటి వ్యాక్సిన్ డోస్ పుట্టినప్పుడు ప్రారంభ రక্షణ కోసం ఇవ్వబడుతుంది."
+        }
+      },
+      {
+        "vaccine": "Hepatitis B-1",
+        "disease": "Hepatitis B",
+        "dose": "First dose",
+        "description": {
+          "english": "First dose of Hepatitis B vaccine to protect against liver infection.",
+          "hindi": "हेपेटाइटिस बी का पहला टीका जो लिवर के संक्रमण से बचाता है।",
+          "bengali": "হেপাটাইটিস বি টিকার প্রথম ডোজ যকৃতের সংক্রমণ থেকে রক্ষা করে।",
+          "assamese": "হেপাটাইটিছ বিৰ প্ৰথম টিকা যকৃতৰ সংক্ৰমণৰ পৰা ৰক্ষা কৰে।",
+          "telugu": "హెపటైటిస్ బి మొదటి వ్యాక్సిన్ డోస్ కాలేయ సంక్రమణ నుండి రక్షిస్తుంది."
+        }
+      }
+    ],
+    "6_weeks": [
+      {
+        "vaccine": "DPT-1",
+        "disease": "Diphtheria, Pertussis, Tetanus",
+        "dose": "First dose",
+        "description": {
+          "english": "First dose of DPT vaccine protects against diphtheria, whooping cough, and tetanus.",
+          "hindi": "डीपीटी का पहला टीका डिप्थीरिया, काली खांसी और टिटनेस से बचाता है।",
+          "bengali": "ডিপিটি টিকার প্রথম ডোজ ডিপথেরিয়া, হুপিং কাশি এবং টিটেনাস থেকে রক্ষা করে।",
+          "assamese": "ডিপিটিৰ প্ৰথম টিকাই ডিপথেৰিয়া, হুপিং কাহ আৰু টিটেনাছৰ পৰা ৰক্ষা কৰে।",
+          "telugu": "డిపిటి మొదటి వ్యాక్సిన్ డోస్ డిఫ్తీరియా, హూపింగ్ కఫ్ మరియు టెటనస్ నుండి రక్షిస్తుంది."
+        }
+      },
+      {
+        "vaccine": "OPV-1",
+        "disease": "Polio",
+        "dose": "First dose",
+        "description": {
+          "english": "First scheduled polio vaccine dose at 6 weeks of age.",
+          "hindi": "6 सप्ताह की उम्र में पोलियो का पहला निर्धारित टीका।",
+          "bengali": "৬ সপ্তাহ বয়সে পোলিও টিকার প্রথম নির্ধারিত ডোজ।",
+          "assamese": "৬ সপ্তাহ বয়সত পোলিঅ'ৰ প্ৰথম নিৰ্ধাৰিত টিকা।",
+          "telugu": "6 వారాల వయస్సులో పోలియో మొదటి షెడ్యూల్డ్ వ్యాక్సిన్ డోస్."
+        }
+      },
+      {
+        "vaccine": "Hepatitis B-2",
+        "disease": "Hepatitis B",
+        "dose": "Second dose",
+        "description": {
+          "english": "Second dose of Hepatitis B vaccine for continued protection.",
+          "hindi": "निरंतर सुरक्षा के लिए हेपेटाइटिस बी का दूसरा टीका।",
+          "bengali": "অব্যাহত সুরক্ষার জন্য হেপাটাইটিস বি টিকার দ্বিতীয় ডোজ।",
+          "assamese": "অব্যাহত সুৰক্ষাৰ বাবে হেপাটাইটিছ বিৰ দ্বিতীয় টিকা।",
+          "telugu": "నిరంతర రక్షణ కోసం హెపటైటిస్ బి రెండవ వ్యాক్సిన్ డోస్."
+        }
+      }
+    ],
+    "10_weeks": [
+      {
+        "vaccine": "DPT-2",
+        "disease": "Diphtheria, Pertussis, Tetanus",
+        "dose": "Second dose",
+        "description": {
+          "english": "Second dose of DPT vaccine for stronger immunity.",
+          "hindi": "मजबूत प्रतिरक्षा के लिए डीपीटी का दूसरा टीका।",
+          "bengali": "শক্তিশালী অনাক্রম্যতার জন্য ডিপিটি টিকার দ্বিতীয় ডোজ।",
+          "assamese": "শক্তিশালী প্ৰতিৰোধ ক্ষমতাৰ বাবে ডিপিটিৰ দ্বিতীয় টিকা।",
+          "telugu": "బలమైన రోగనిరోధక శక్తి కోసం డిపిటి రెండవ వ్యాక్సిన్ డోస్."
+        }
+      },
+      {
+        "vaccine": "OPV-2",
+        "disease": "Polio",
+        "dose": "Second dose",
+        "description": {
+          "english": "Second polio vaccine dose at 10 weeks for enhanced protection.",
+          "hindi": "बेहतर सुरक्षा के लिए 10 सप्ताह में पोलियो का दूसरा टीका।",
+          "bengali": "উন্নত সুরক্ষার জন্য ১০ সপ্তাহে পোলিও টিকার দ্বিতীয় ডোজ।",
+          "assamese": "উন্নত সুৰক্ষাৰ বাবে ১০ সপ্তাহত পোলিঅ'ৰ দ্বিতীয় টিকা।",
+          "telugu": "మెరుగైన రక్షణ కోసం 10 వారాలలో పోలియో రెండవ వ్యాక్సిన్ డోస్."
+        }
+      }
+    ],
+    "14_weeks": [
+      {
+        "vaccine": "DPT-3",
+        "disease": "Diphtheria, Pertussis, Tetanus",
+        "dose": "Third dose",
+        "description": {
+          "english": "Third and final primary dose of DPT vaccine.",
+          "hindi": "डीपीटी टीके की तीसरी और अंतिम प्राथमिक खुराक।",
+          "bengali": "ডিপিটি টিকার তৃতীয় এবং চূড়ান্ত প্রাথমিক ডোজ।",
+          "assamese": "ডিপিটি টিকাৰ তৃতীয় আৰু চূড়ান্ত প্ৰাথমিক ডোজ।",
+          "telugu": "డిపిటি వ్యాক్సిన్ యొక్క మూడవ మరియు చివరి ప్రాథమిక డోస్."
+        }
+      },
+      {
+        "vaccine": "OPV-3",
+        "disease": "Polio",
+        "dose": "Third dose",
+        "description": {
+          "english": "Third polio vaccine dose completing the primary series.",
+          "hindi": "प्राथमिक श्रृंखला पूरी करने वाला पोलियो का तीसरा टीका।",
+          "bengali": "প্রাথমিক সিরিজ সম্পূর্ণ করে পোলিও টিকার তৃতীয় ডোজ।",
+          "assamese": "প্ৰাথমিক শৃংখলা সম্পূৰ্ণ কৰা পোলিঅ'ৰ তৃতীয় টিকা।",
+          "telugu": "ప్రాథమిక సిరీస్ పూర్తి చేసే పోలియో మూడవ వ్యాక్సిన్ డోస్."
+        }
+      },
+      {
+        "vaccine": "Hepatitis B-3",
+        "disease": "Hepatitis B",
+        "dose": "Third dose",
+        "description": {
+          "english": "Final dose of Hepatitis B vaccine for complete protection.",
+          "hindi": "पूर्ण सुरक्षा के लिए हेपेटाइटिस बी का अंतिम टीका।",
+          "bengali": "সম্পূর্ণ সুরক্ষার জন্য হেপাটাইটিস বি টিকার চূড়ান্ত ডোজ।",
+          "assamese": "সম্পূৰ্ণ সুৰক্ষাৰ বাবে হেপাটাইটিছ বিৰ চূড়ান্ত টিকা।",
+          "telugu": "పూర్తి రక్షణ కోసం హెపటైటిస్ బి చివరి వ్యాక్సిన్ డోస్."
+        }
+      }
+    ],
+    "9_months": [
+      {
+        "vaccine": "Measles-1",
+        "disease": "Measles",
+        "dose": "First dose",
+        "description": {
+          "english": "First measles vaccine dose at 9 months to prevent measles infection.",
+          "hindi": "खसरे के संक्रमण को रोकने के लिए 9 महीने में खसरे का पहला टीका।",
+          "bengali": "হামের সংক্রমণ প্রতিরোধে ৯ মাসে হামের প্রথম টিকা।",
+          "assamese": "হামৰ সংক্ৰমণ প্ৰতিৰোধৰ বাবে ৯ মাহত হামৰ প্ৰথম টিকা।",
+          "telugu": "మీజిల్స్ సంక్రమణను నివారించడానికి 9 నెలలలో మీజిల్స్ మొదటి వ్యాక్సిన్."
+        }
+      }
+    ],
+    "12_months": [
+      {
+        "vaccine": "MMR",
+        "disease": "Measles, Mumps, Rubella",
+        "dose": "First dose",
+        "description": {
+          "english": "MMR vaccine protects against measles, mumps, and rubella.",
+          "hindi": "एमएमआर टीका खसरा, कण्ठमाला और रूबेला से बचाता है।",
+          "bengali": "এমএমআর টিকা হাম, মাম্পস এবং রুবেলা থেকে রক্ষা করে।",
+          "assamese": "এমএমআৰ টিকাই হাম, মাম্পছ আৰু ৰুবেলাৰ পৰা ৰক্ষা কৰে।",
+          "telugu": "ఎంఎంఆర్ వ్యాక్సిన్ మీజిల్స్, మంప్స్ మరియు రుబెల్లా నుండి రక్షిస్తుంది."
+        }
+      }
+    ],
+    "16_24_months": [
+      {
+        "vaccine": "DPT Booster-1",
+        "disease": "Diphtheria, Pertussis, Tetanus",
+        "dose": "First booster",
+        "description": {
+          "english": "First DPT booster dose to maintain immunity.",
+          "hindi": "प्रतिरक्षा बनाए रखने के लिए डीपीटी का पहला बूस्टर टीका।",
+          "bengali": "অনাক্রম্যতা বজায় রাখতে ডিপিটির প্রথম বুস্টার ডোজ।",
+          "assamese": "প্ৰতিৰোধ ক্ষমতা বজাই ৰাখিবলৈ ডিপিটিৰ প্ৰথম বুষ্টাৰ টিকা।",
+          "telugu": "రోగనిరోధక శక్తిని కొనసాగించడానికి డిপిটి మొదటి బూస్టర్ డోస్."
+        }
+      },
+      {
+        "vaccine": "OPV Booster",
+        "disease": "Polio",
+        "dose": "Booster dose",
+        "description": {
+          "english": "Polio booster dose for continued protection.",
+          "hindi": "निरंतर सुरक्षा के लिए पोलियो बूस्टर टीका।",
+          "bengali": "অব্যাহত সুরক্ষার জন্য পোলিও বুস্টার ডোজ।",
+          "assamese": "অব্যাহত সুৰক্ষাৰ বাবে পোলিঅ' বুষ্টাৰ টিকা।",
+          "telugu": "నిరంతర రక్షణ కోసం పోలియో బూస్టర్ డోస్."
+        }
+      }
+    ],
+    "5_years": [
+      {
+        "vaccine": "DPT Booster-2",
+        "disease": "Diphtheria, Pertussis, Tetanus",
+        "dose": "Second booster",
+        "description": {
+          "english": "Second DPT booster before school entry.",
+          "hindi": "स्कूल में प्रवेश से पहले डीपीटी का दूसरा बूस्टर।",
+          "bengali": "স্কুলে ভর্তির আগে ডিপিটির দ্বিতীয় বুস্টার।",
+          "assamese": "স্কুলত ভৰ্তিৰ আগতে ডিপিটিৰ দ্বিতীয় বুষ্টাৰ।",
+          "telugu": "పాఠశాల ప్రవేశానికి ముందు డిపిটి రెండవ బూస্టర్."
+        }
+      },
+      {
+        "vaccine": "MMR-2",
+        "disease": "Measles, Mumps, Rubella",
+        "dose": "Second dose",
+        "description": {
+          "english": "Second MMR dose for complete immunity.",
+          "hindi": "पूर्ण प्रतिरक्षा के लिए एमएमआर का दूसरा टीका।",
+          "bengali": "সম্পূর্ণ অনাক্রম্যতার জন্য এমএমআর দ্বিতীয় ডোজ।",
+          "assamese": "সম্পূৰ্ণ প্ৰতিৰোধ ক্ষমতাৰ বাবে এমএমআৰৰ দ্বিতীয় টিকা।",
+          "telugu": "పూర్తి రోగనిరోధక శక్తి కోసం ఎంఎంఆర్ రెండవ డోస్."
+        }
+      }
+    ],
+    "10_years": [
+      {
+        "vaccine": "Tetanus Toxoid",
+        "disease": "Tetanus",
+        "dose": "Booster dose",
+        "description": {
+          "english": "Tetanus toxoid booster for adolescents.",
+          "hindi": "किशोरों के लिए टिटनेस टॉक्सॉइड बूस्टर।",
+          "bengali": "কিশোর-কিশোরীদের জন্য টিটেনাস টক্সয়েড বুস্টার।",
+          "assamese": "কিশোৰ-কিশোৰীসকলৰ বাবে টিটেনাছ টক্সয়েড বুষ্টাৰ।",
+          "telugu": "కిశోరుల కోసం టెటనస్ టాక్సాయిడ్ బూస్టర్."
+        }
+      }
+    ],
+    "16_years": [
+      {
+        "vaccine": "Tetanus Toxoid",
+        "disease": "Tetanus",
+        "dose": "Final booster",
+        "description": {
+          "english": "Final tetanus toxoid booster for long-term protection.",
+          "hindi": "दीर्घकालिक सुरक्षा के लिए टिटनेस टॉक्सॉइड का अंतिम बूस्टर।",
+          "bengali": "দীর্ঘমেয়াদী সুরক্ষার জন্য টিটেনাস টক্সয়েডের চূড়ান্ত বুস্টার।",
+          "assamese": "দীৰ্ঘম্যাদী সুৰক্ষাৰ বাবে টিটেনাছ টক্সয়েডৰ চূড়ান্ত বুষ্টাৰ।",
+          "telugu": "దీర్ఘకాలిక రక్షణ కోసం టెటనస్ టాక్సాయిడ్ చివరి బూస్టర్."
+        }
+      }
+    ]
+  },
+  "reminders": {
+    "beforeDue": [7, 3, 1],
+    "afterMissed": [1, 7, 14, 30]
+  },
+  "specialVaccines": {
+    "seasonal": [
+      {
+        "vaccine": "Influenza",
+        "season": "Annual",
+        "description": {
+          "english": "Annual flu vaccine recommended for all ages, especially children and elderly.",
+          "hindi": "वार्षिक फ्लू टीका सभी उम्र के लिए अनुशंसित, विशेष रूप से बच्चों और बुजुर्गों के लिए।",
+          "bengali": "বার্ষিক ফ্লু টিকা সব বয়সের জন্য সুপারিশ, বিশেষত শিশু এবং বয়স্কদের জন্য।",
+          "assamese": "বাৰ্ষিক ফ্লু টিকা সকলো বয়সৰ বাবে পৰামৰ্শিত, বিশেষকৈ শিশু আৰু বয়স্কসকলৰ বাবে।",
+          "telugu": "వార్షిక ఫ్లూ వ్యాక్సిన్ అన్ని వయసుల వారికి సిఫార్సు చేయబడింది, ముఖ్యంగా పిల్లలు మరియు వృద్ధులకు."
+        }
+      }
+    ],
+    "pregnancy": [
+      {
+        "vaccine": "Tetanus Toxoid",
+        "timing": "During pregnancy",
+        "doses": 2,
+        "description": {
+          "english": "Two doses of tetanus toxoid during pregnancy to protect mother and baby.",
+          "hindi": "मां और बच्चे की सुरक्षा के लिए गर्भावस्था के दौरान टिटनेस टॉक्सॉइड की दो खुराकें।",
+          "bengali": "মা এবং শিশুর সুরক্ষার জন্য গর্ভাবস্থায় টিটেনাস টক্সয়েডের দুটি ডোজ।",
+          "assamese": "মাতৃ আৰু শিশুৰ সুৰক্ষাৰ বাবে গৰ্ভাৱস্থাত টিটেনাছ টক্সয়েডৰ দুটা ডোজ।",
+          "telugu": "తల్లి మరియు శిశువు రక్షణ కోసం గర్భధారణ సమయంలో టెటనస్ టాక్సాయిడ్ రెండు డోసులు."
+        }
+      }
+    ]
+  }
+}

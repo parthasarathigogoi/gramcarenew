@@ -1,0 +1,137 @@
+{
+  "name": "gramcare-health-chatbot",
+  "version": "1.0.0",
+  "description": "AI-powered healthcare chatbot with multilingual support and outbreak alerts",
+  "main": "server/index.js",
+  "scripts": {
+    "setup": "./scripts/dev-setup.sh",
+    "dev": "./scripts/dev-start.sh",
+    "dev:legacy": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "start": "npm run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm test -- --coverage --watchAll=false",
+    "test:server": "cd server && npm test -- --coverage",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "lint:fix": "npm run lint:fix:client && npm run lint:fix:server",
+    "lint:fix:client": "cd client && npm run lint:fix",
+    "lint:fix:server": "cd server && npm run lint:fix",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "install-all": "npm run install:all",
+    "clean": "npm run clean:client && npm run clean:server && npm run clean:docker",
+    "clean:client": "cd client && rm -rf build node_modules package-lock.json",
+    "clean:server": "cd server && rm -rf dist node_modules package-lock.json",
+    "clean:docker": "docker-compose down -v && docker system prune -f",
+    "docker:build": "./scripts/prod-deploy.sh build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "deploy:staging": "./scripts/prod-deploy.sh deploy --env staging",
+    "deploy:production": "./scripts/prod-deploy.sh deploy --env production",
+    "backup": "./scripts/prod-deploy.sh backup",
+    "restore": "./scripts/prod-deploy.sh restore",
+    "health": "./scripts/prod-deploy.sh health",
+    "status": "./scripts/prod-deploy.sh status",
+    "rollback": "./scripts/prod-deploy.sh rollback",
+    "logs:server": "./scripts/prod-deploy.sh logs server",
+    "logs:client": "./scripts/prod-deploy.sh logs client",
+    "logs:mongo": "./scripts/prod-deploy.sh logs mongo",
+    "logs:redis": "./scripts/prod-deploy.sh logs redis",
+    "security:audit": "npm audit && cd server && npm audit && cd ../client && npm audit",
+    "security:fix": "npm audit fix && cd server && npm audit fix && cd ../client && npm audit fix",
+    "update:deps": "npm update && cd server && npm update && cd ../client && npm update",
+    "check:outdated": "npm outdated && cd server && npm outdated && cd ../client && npm outdated",
+    "precommit": "npm run lint && npm run test",
+    "prepare": "husky install",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md}\""
+  },
+  "keywords": [
+    "healthcare",
+    "chatbot",
+    "ai",
+    "multilingual",
+    "outbreak-alerts",
+    "whatsapp",
+    "react",
+    "nodejs",
+    "mongodb",
+    "google-translate",
+    "twilio",
+    "rural-health",
+    "india"
+  ],
+  "author": {
+    "name": "June Ahmed",
+    "email": "june@gramcare.com",
+    "url": "https://gramcare.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gramcare/gramcare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gramcare/gramcare/issues"
+  },
+  "homepage": "https://gramcare.com",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.0.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
+    }
+  },
+  "config": {
+    "mongodbMemoryServer": {
+      "version": "6.0.0"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "volta": {
+    "node": "18.19.0",
+    "npm": "10.2.3"
+  },
+  "type": "commonjs"
+}

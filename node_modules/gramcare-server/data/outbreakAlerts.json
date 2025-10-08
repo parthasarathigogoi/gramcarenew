@@ -1,0 +1,144 @@
+{
+  "alerts": [
+    {
+      "id": "assam_dengue_2024",
+      "location": "Assam",
+      "disease": "Dengue",
+      "severity": "high",
+      "message": {
+        "english": "⚠️ DENGUE ALERT: Rising cases in Assam this week. Use mosquito nets, remove stagnant water, and seek immediate medical help for high fever.",
+        "hindi": "⚠️ डेंगू अलर्ट: इस सप्ताह असम में बढ़ते मामले। मच्छरदानी का उपयोग करें, रुके हुए पानी को हटाएं, और तेज बुखार के लिए तुरंत चिकित्सा सहायता लें।"
+      },
+      "date": "2024-01-15",
+      "affectedAreas": ["Guwahati", "Dibrugarh", "Silchar"],
+      "preventionTips": [
+        "Use mosquito nets and repellents",
+        "Remove stagnant water from containers",
+        "Wear long-sleeved clothing",
+        "Seek medical help for fever above 100°F"
+      ]
+    },
+    {
+      "id": "bihar_malaria_2024",
+      "location": "Bihar",
+      "disease": "Malaria",
+      "severity": "medium",
+      "message": {
+        "english": "🦟 MALARIA ALERT: Increased cases due to recent rains in Bihar. Sleep under treated nets and clear water logging.",
+        "hindi": "🦟 मलेरिया अलर्ट: बिहार में हाल की बारिश के कारण बढ़े मामले। उपचारित जालों के नीचे सोएं और पानी का जमाव साफ करें।"
+      },
+      "date": "2024-01-14",
+      "affectedAreas": ["Patna", "Muzaffarpur", "Darbhanga"],
+      "preventionTips": [
+        "Sleep under insecticide-treated nets",
+        "Clear water logging around homes",
+        "Use mosquito coils in the evening",
+        "Get tested if fever persists"
+      ]
+    },
+    {
+      "id": "up_diarrhea_2024",
+      "location": "Uttar Pradesh",
+      "disease": "Diarrhea",
+      "severity": "medium",
+      "message": {
+        "english": "💧 DIARRHEA ALERT: Water contamination reported in parts of UP. Boil water before drinking and maintain hygiene.",
+        "hindi": "💧 दस्त अलर्ट: यूपी के कुछ हिस्सों में पानी के संदूषण की रिपोर्ट। पीने से पहले पानी उबालें और स्वच्छता बनाए रखें।"
+      },
+      "date": "2024-01-13",
+      "affectedAreas": ["Lucknow", "Kanpur", "Varanasi"],
+      "preventionTips": [
+        "Boil water for 1 minute before drinking",
+        "Wash hands frequently with soap",
+        "Eat freshly cooked food",
+        "Use ORS for dehydration"
+      ]
+    },
+    {
+      "id": "wb_chikungunya_2024",
+      "location": "West Bengal",
+      "disease": "Chikungunya",
+      "severity": "low",
+      "message": {
+        "english": "🦟 CHIKUNGUNYA ALERT: Few cases reported in West Bengal. Prevent mosquito breeding and use protective measures.",
+        "hindi": "🦟 चिकनगुनिया अलर्ट: पश्चिम बंगाल में कुछ मामले रिपोर्ट। मच्छरों के प्रजनन को रोकें और सुरक्षा उपाय अपनाएं।"
+      },
+      "date": "2024-01-12",
+      "affectedAreas": ["Kolkata", "Howrah", "Durgapur"],
+      "preventionTips": [
+        "Remove water from flower pots and containers",
+        "Use mosquito repellent creams",
+        "Wear full-sleeve clothes",
+        "Consult doctor for joint pain and fever"
+      ]
+    },
+    {
+      "id": "rajasthan_heat_2024",
+      "location": "Rajasthan",
+      "disease": "Heat Stroke",
+      "severity": "high",
+      "message": {
+        "english": "🌡️ HEAT WAVE ALERT: Extreme temperatures in Rajasthan. Stay hydrated, avoid sun exposure during 11 AM - 4 PM.",
+        "hindi": "🌡️ लू की चेतावनी: राजस्थान में अत्यधिक तापमान। हाइड्रेटेड रहें, सुबह 11 बजे से शाम 4 बजे तक धूप से बचें।"
+      },
+      "date": "2024-01-11",
+      "affectedAreas": ["Jaipur", "Jodhpur", "Bikaner"],
+      "preventionTips": [
+        "Drink water every 15-20 minutes",
+        "Wear light-colored, loose clothing",
+        "Stay indoors during peak hours",
+        "Use ORS if feeling dizzy"
+      ]
+    },
+    {
+      "id": "kerala_nipah_2024",
+      "location": "Kerala",
+      "disease": "Nipah Virus",
+      "severity": "high",
+      "message": {
+        "english": "🦇 NIPAH ALERT: Suspected case in Kerala. Avoid contact with bats, wash fruits before eating, report fever immediately.",
+        "hindi": "🦇 निपाह अलर्ट: केरल में संदिग्ध मामला। चमगादड़ों के संपर्क से बचें, फल खाने से पहले धोएं, बुखार की तुरंत रिपोर्ट करें।"
+      },
+      "date": "2024-01-10",
+      "affectedAreas": ["Kozhikode", "Malappuram", "Kannur"],
+      "preventionTips": [
+        "Avoid areas with bat colonies",
+        "Wash fruits and vegetables thoroughly",
+        "Don't consume raw date palm sap",
+        "Report fever and breathing difficulty immediately"
+      ]
+    }
+  ],
+  "generalAlerts": [
+    {
+      "id": "monsoon_diseases",
+      "title": "Monsoon Health Alert",
+      "message": {
+        "english": "🌧️ Monsoon season increases risk of water-borne diseases. Drink boiled water, maintain hygiene, and avoid street food.",
+        "hindi": "🌧️ मानसून के मौसम में जल जनित बीमारियों का खतरा बढ़ जाता है। उबला पानी पिएं, स्वच्छता बनाए रखें, और स्ट्रीट फूड से बचें।"
+      },
+      "season": "monsoon",
+      "priority": "medium"
+    },
+    {
+      "id": "winter_respiratory",
+      "title": "Winter Respiratory Alert",
+      "message": {
+        "english": "❄️ Winter increases respiratory infections. Keep warm, avoid crowded places if sick, and get flu vaccination.",
+        "hindi": "❄️ सर्दी में श्वसन संक्रमण बढ़ जाता है। गर्म रहें, बीमार होने पर भीड़भाड़ वाली जगहों से बचें, और फ्लू का टीका लगवाएं।"
+      },
+      "season": "winter",
+      "priority": "low"
+    },
+    {
+      "id": "summer_dehydration",
+      "title": "Summer Dehydration Alert",
+      "message": {
+        "english": "☀️ Summer heat can cause dehydration. Drink plenty of water, avoid alcohol, and stay in shade during peak hours.",
+        "hindi": "☀️ गर्मी की वजह से निर्जलीकरण हो सकता है। भरपूर पानी पिएं, शराब से बचें, और तेज धूप में छाया में रहें।"
+      },
+      "season": "summer",
+      "priority": "high"
+    }
+  ]
+}

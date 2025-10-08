@@ -1,0 +1,39 @@
+{
+  "name": "gramcare-server",
+  "version": "1.0.0",
+  "description": "Backend server for GramCare health chatbot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google-cloud/translate": "^8.0.2",
+    "@google/generative-ai": "^0.24.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "openai": "^5.20.2",
+    "twilio": "^4.23.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "express",
+    "chatbot",
+    "healthcare",
+    "api"
+  ],
+  "author": "June Ahmed",
+  "license": "MIT"
+}
