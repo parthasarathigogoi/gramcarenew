@@ -1,0 +1,21 @@
+[2025-10-08T11:17:57.412Z] ERROR: Error sending WhatsApp message: {"status":401,"code":20003,"moreInfo":"https://www.twilio.com/docs/errors/20003"}
+[2025-10-08T11:19:46.415Z] ERROR: Error sending WhatsApp message: {"status":401,"code":20003,"moreInfo":"https://www.twilio.com/docs/errors/20003"}
+[2025-10-08T11:24:54.691Z] INFO: WhatsApp message sent to +918822459141: "SMed41159342bd0177a41640104447a578"
+[2025-10-08T11:25:07.254Z] ERROR: Error sending SMS message: {"status":400,"code":21660,"moreInfo":"https://www.twilio.com/docs/errors/21660"}
+[2025-10-08T11:25:50.775Z] INFO: SMS message sent to +918822459141: "SM328e0c0664704785129ef2623170101d"
+[2025-10-08T11:57:53.929Z] ERROR: Error sending SMS message: {"status":400,"code":21211,"moreInfo":"https://www.twilio.com/docs/errors/21211"}
+[2025-10-08T11:58:39.119Z] INFO: WhatsApp message sent to +15551234567: "SM10440f0ef1069aff0e0dab606fc73018"
+[2025-10-08T11:58:54.836Z] INFO: SMS message sent to +918822459141: "SM8370a244c38cc80f0ddcdd9c437d997b"
+[2025-10-08T11:59:08.498Z] INFO: WhatsApp message sent to +918822459141: "SM5d6108304aa16b63fbc662dbae8eb395"
+[2025-10-08T11:59:50.722Z] INFO: SMS message sent to +918822459141: "SMa6fa609f51b48079f5dd688f6be296c7"
+[2025-10-08T12:02:43.991Z] INFO: WhatsApp message sent to +918822459141: "SMee2168823961ea70f6f1d671eab339e2"
+[2025-10-08T12:03:38.996Z] INFO: SMS message sent to +918822459141: "SM694023661b0449f8bc3eccc723276920"
+[2025-10-08T12:19:32.001Z] INFO: SMS message sent to +918822459141: "SMc4fc66a210a633c877b4b08ab41a8471"
+[2025-10-08T12:19:38.867Z] INFO: WhatsApp message sent to +918822459141: "SM28cc3b6f44a6fd264403b4c42b9786c3"
+[2025-10-08T12:20:05.676Z] INFO: WhatsApp message sent to +918822459141: "SMf12536fa9ee060249aae9d5c7cfba62f"
+[2025-10-08T13:36:07.189Z] INFO: SMS message sent to +918822459141: "SMa524be4ef85496b822dc181b1da9e436"
+[2025-10-08T13:53:54.123Z] INFO: SMS message sent to +918822459141: "SMd51249bcb1d433bef484f5f1f8b5920e"
+[2025-10-08T14:04:25.208Z] INFO: WhatsApp message sent to +918822459141: "SM4b30337c198a45ac290fb9e2c4538d8b"
+[2025-10-08T15:08:20.165Z] INFO: WhatsApp message sent to +918822459141: "SMfa6fed3399e3c8051ff2a90cb2782a5e"
+[2025-10-08T15:08:31.724Z] INFO: SMS message sent to +918822459141: "SMfce89d7f3e78d4d17595b46465ba41b4"
+[2025-10-08T15:11:43.317Z] INFO: SMS message sent to +918822459141: "SMf0885fca329c0f2504a9e7e831ec1c1a"

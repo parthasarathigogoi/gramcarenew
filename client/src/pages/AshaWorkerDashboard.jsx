@@ -5,58 +5,51 @@ import { Link } from 'react-router-dom';
 const AshaWorkerDashboard = () => {
   const { t } = useLanguage();
   const [patients, setPatients] = useState([]);
+  const [villages, setVillages] = useState([]); // New state for villages
   const [loading, setLoading] = useState(true);
 
-  // Fetch patient data
+  // Fetch patient and village data
   useEffect(() => {
-    const fetchPatients = async () => {
+    const fetchData = async () => {
       try {
-        // In a real app, this would be an API call
-        // For demo purposes, we'll use mock data
-        const mockPatients = [
+        const response = await fetch('http://localhost:5001/api/patients');
+        const data = await response.json();
+        setPatients(data);
+
+        // Mock village data (existing)
+        const mockVillages = [
           {
-            id: '1',
-            name: 'Rajesh Kumar',
-            phone: '+91 9876543210',
-            symptom: 'Fever for 3 days',
-            triage: 'yellow',
-            timestamp: Date.now() - 3600000 // 1 hour ago
+            name: 'Haripur',
+            totalPatients: 2,
+            redTriage: 1,
+            yellowTriage: 1,
+            commonSymptoms: ['Fever', 'Chest pain']
           },
           {
-            id: '2',
-            name: 'Priya Singh',
-            phone: '+91 8765432109',
-            symptom: 'Severe headache',
-            triage: 'yellow',
-            timestamp: Date.now() - 7200000 // 2 hours ago
+            name: 'Shivpur',
+            totalPatients: 2,
+            redTriage: 1,
+            yellowTriage: 1,
+            commonSymptoms: ['Severe headache', 'Diarrhea']
           },
           {
-            id: '3',
-            name: 'Amit Patel',
-            phone: '+91 7654321098',
-            symptom: 'Chest pain',
-            triage: 'red',
-            timestamp: Date.now() - 1800000 // 30 minutes ago
-          },
-          {
-            id: '4',
-            name: 'Sunita Devi',
-            phone: '+91 6543210987',
-            symptom: 'Cough with phlegm',
-            triage: 'yellow',
-            timestamp: Date.now() - 10800000 // 3 hours ago
+            name: 'Ramnagar',
+            totalTriage: 2,
+            redTriage: 0,
+            yellowTriage: 1,
+            commonSymptoms: ['Cough', 'Body aches']
           }
         ];
 
-        setPatients(mockPatients);
+        setVillages(mockVillages); // Set mock village data
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching patients:', error);
+        console.error('Error fetching data:', error);
         setLoading(false);
       }
     };
 
-    fetchPatients();
+    fetchData();
   }, []);
 
   // Format timestamp to readable time
@@ -93,6 +86,19 @@ const AshaWorkerDashboard = () => {
     }
   };
 
+  // Function to get most common symptoms
+  const getCommonSymptoms = () => {
+    const symptomCounts = {};
+    patients.forEach(patient => {
+      const symptom = patient.symptom.split(' ')[0]; // Take the first word as a simple symptom key
+      symptomCounts[symptom] = (symptomCounts[symptom] || 0) + 1;
+    });
+
+    const sortedSymptoms = Object.entries(symptomCounts).sort(([, countA], [, countB]) => countB - countA);
+    const topSymptoms = sortedSymptoms.slice(0, 3).map(([symptom]) => symptom);
+    return topSymptoms.join(', ');
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
       <h1 className="text-2xl font-bold mb-6">{t('dashboardTitle')}</h1>
@@ -103,9 +109,35 @@ const AshaWorkerDashboard = () => {
         </div>
       ) : (
         <>
+          {/* Village Health Overview */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold mb-4">{t('villageHealthOverview')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {villages.map((village) => (
+                <div key={village.name} className="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-medium mb-2">{village.name}</h3>
+                  <p className="text-sm text-gray-600">{t('totalPatients')}: {village.totalPatients}</p>
+                  <p className="text-sm text-red-600">{t('redTriageCases')}: {village.redTriage}</p>
+                  <p className="text-sm text-yellow-600">{t('yellowTriageCases')}: {village.yellowTriage}</p>
+                  <p className="text-sm text-gray-600">{t('commonSymptoms')}: {village.commonSymptoms.join(', ')}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Health Trends Section */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold mb-4">{t('healthTrends')}</h2>
+            <div className="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200">
+              <p className="text-sm text-gray-600">{t('mostCommonSymptoms')}: {getCommonSymptoms()}</p>
+            </div>
+          </div>
+
+          {/* Patient List (existing) */}
+          <h2 className="text-xl font-semibold mb-4">{t('patientsRequiringAttention')}</h2>
           {patients.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
-              No patients requiring attention at this time.
+              {t('noPatientsAttention')}
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -125,7 +157,10 @@ const AshaWorkerDashboard = () => {
                       {t('patientTriage')}
                     </th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Time
+                      {t('patientVillage')}
+                    </th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {t('time')}
                     </th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       {t('patientActions')}
@@ -149,15 +184,18 @@ const AshaWorkerDashboard = () => {
                           {getTriageLabel(patient.triage)}
                         </span>
                       </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">{patient.village}</div>
+                      </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {formatTime(patient.timestamp)}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <Link to={`/booking?patient=${patient.id}`} className="text-blue-600 hover:text-blue-900 mr-4">
-                          Book Consult
+                          {t('bookConsult')}
                         </Link>
                         <Link to={`/prescription/${patient.id}`} className="text-green-600 hover:text-green-900">
-                          Prescription
+                          {t('prescription')}
                         </Link>
                       </td>
                     </tr>

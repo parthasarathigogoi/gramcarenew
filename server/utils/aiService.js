@@ -1,11 +1,12 @@
 const OpenAI = require('openai');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const Groq = require('groq-sdk');
 const { getCachedTranslation } = require('./translator');
 
 // Initialize AI clients
 let openai = null;
 let gemini = null;
-let huggingFaceToken = null;
+let groq = null;
 
 // Initialize OpenAI
 if (process.env.OPENAI_API_KEY) {
@@ -26,12 +27,14 @@ if (process.env.GEMINI_API_KEY) {
   console.warn('Gemini API key not found. Gemini features will be disabled.');
 }
 
-// Initialize Hugging Face
-if (process.env.HUGGINGFACE_API_KEY) {
-  huggingFaceToken = process.env.HUGGINGFACE_API_KEY;
-  console.log('Hugging Face initialized successfully');
+// Initialize Groq
+if (process.env.GROQ_API_KEY) {
+  groq = new Groq({
+    apiKey: process.env.GROQ_API_KEY,
+  });
+  console.log('Groq initialized successfully');
 } else {
-  console.warn('Hugging Face API key not found. Hugging Face features will be disabled.');
+  console.warn('Groq API key not found. Groq features will be disabled.');
 }
 
 // Health-focused system prompt
@@ -58,7 +61,7 @@ If asked about non-health topics, politely redirect to health-related questions.
  * Get AI response using the preferred AI service
  * @param {string} userMessage - The user's message
  * @param {string} language - Target language for response
- * @param {string} preferredAI - 'openai', 'gemini', 'huggingface', or 'auto'
+ * @param {string} preferredAI - 'openai' or 'gemini' or 'auto'
  * @returns {Promise<Object>} AI response with metadata
  */
 async function getAIResponse(userMessage, language = 'en', preferredAI = 'auto') {
@@ -73,20 +76,20 @@ async function getAIResponse(userMessage, language = 'en', preferredAI = 'auto')
     } else if (preferredAI === 'gemini' && gemini) {
       response = await getGeminiResponse(userMessage, language);
       aiProvider = 'gemini';
-    } else if (preferredAI === 'huggingface' && huggingFaceToken) {
-      response = await getHuggingFaceResponse(userMessage, language);
-      aiProvider = 'huggingface';
+    } else if (preferredAI === 'groq' && groq) {
+      response = await getGroqResponse(userMessage, language);
+      aiProvider = 'groq';
     } else {
-      // Auto-select: try Hugging Face first (free), then Gemini, fallback to OpenAI
-      if (huggingFaceToken) {
-        response = await getHuggingFaceResponse(userMessage, language);
-        aiProvider = 'huggingface';
-      } else if (gemini) {
+      // Auto-select: try Gemini first (free tier), fallback to OpenAI, then Groq
+      if (gemini) {
         response = await getGeminiResponse(userMessage, language);
         aiProvider = 'gemini';
       } else if (openai) {
         response = await getOpenAIResponse(userMessage, language);
         aiProvider = 'openai';
+      } else if (groq) {
+        response = await getGroqResponse(userMessage, language);
+        aiProvider = 'groq';
       } else {
         throw new Error('No AI service available');
       }
@@ -109,34 +112,6 @@ async function getAIResponse(userMessage, language = 'en', preferredAI = 'auto')
       aiProvider: null,
       confidence: 0
     };
-  }
-}
-
-/**
- * Get Hugging Face response for medical queries
- * @param {string} userMessage - The user's message
- * @param {string} language - Target language for response
- * @returns {Promise<Object>} Hugging Face response
- */
-async function getHuggingFaceResponse(userMessage, language) {
-  try {
-    const { getMedicalResponse } = require('./huggingFaceService');
-    
-    const response = await getMedicalResponse(userMessage, language);
-    
-    if (response.success) {
-      return {
-        content: response.response,
-        confidence: response.confidence || 0.7,
-        source: response.source || 'huggingface'
-      };
-    } else {
-      throw new Error(response.error || 'Hugging Face service failed');
-    }
-    
-  } catch (error) {
-    console.error('Hugging Face Response Error:', error);
-    throw error;
   }
 }
 
@@ -261,6 +236,99 @@ function getLanguageName(langCode) {
 }
 
 /**
+ * Get response from Groq
+ * @param {string} userMessage - User's message
+ * @param {string} language - Target language
+ * @returns {Promise<Object>} Groq response
+ */
+async function getGroqResponse(userMessage, language) {
+  if (!groq) {
+    throw new Error('Groq not initialized');
+  }
+
+  // Determine language instruction based on target language
+  let languageInstruction = '';
+  if (language === 'hi') {
+    languageInstruction = 'Please respond in Hindi language using proper Hindi script (Devanagari).';
+  } else if (language === 'en') {
+    languageInstruction = 'Please respond in English language.';
+  } else if (language !== 'en') {
+    languageInstruction = `Please respond in ${getLanguageName(language)} language.`;
+  }
+
+  const chatCompletion = await groq.chat.completions.create({
+    messages: [
+      {
+        role: 'system',
+        content: `${HEALTH_SYSTEM_PROMPT}\n\n${languageInstruction}\n\nIMPORTANT: If the user's language is set to Hindi, you MUST respond in Hindi using proper Hindi script (Devanagari). If the user's language is set to English, you MUST respond in English.`,
+      },
+      {
+        role: 'user',
+        content: userMessage,
+      },
+    ],
+    model: 'llama-3.1-8b-instant',
+    temperature: 0.7,
+    max_tokens: 300,
+  });
+
+  // Process response for different languages
+  let content = chatCompletion.choices[0]?.message?.content || '';
+  
+  // For Hindi language, ensure we have a Hindi response
+  if (language === 'hi' && !/[\u0900-\u097F]/.test(content)) {
+    // If no Devanagari characters found, try to translate
+    try {
+      const translated = await getCachedTranslation(content, 'hi');
+      content = {
+        english: content,
+        hindi: translated
+      };
+    } catch (error) {
+      console.error('Translation error:', error);
+    }
+  } else if (language === 'en' && /[\u0900-\u097F]/.test(content)) {
+    // If English is requested but we got Hindi, try to translate to English
+    try {
+      const translated = await getCachedTranslation(content, 'en');
+      content = {
+        hindi: content,
+        english: translated
+      };
+    } catch (error) {
+      console.error('Translation error:', error);
+    }
+  } else {
+    // Always provide both languages for better client-side handling
+    try {
+      if (language === 'hi') {
+        // If we have Hindi content, add English translation
+        const englishTranslation = await getCachedTranslation(content, 'en');
+        content = {
+          hindi: content,
+          english: englishTranslation
+        };
+      } else if (language === 'en') {
+        // If we have English content, add Hindi translation
+        const hindiTranslation = await getCachedTranslation(content, 'hi');
+        content = {
+          english: content,
+          hindi: hindiTranslation
+        };
+      }
+    } catch (error) {
+      console.error('Translation error:', error);
+    }
+  }
+
+  return {
+    content: content,
+    tokens: chatCompletion.usage?.total_tokens || null,
+    confidence: 0.95, // Increased confidence level
+  };
+}
+
+/**
  * Get AI service status
  * @returns {Object} Status of available AI services
  */
@@ -274,9 +342,9 @@ function getAIStatus() {
       available: !!gemini,
       configured: !!process.env.GEMINI_API_KEY
     },
-    huggingface: {
-      available: !!huggingFaceToken,
-      configured: !!process.env.HUGGINGFACE_API_KEY
+    groq: {
+      available: !!groq,
+      configured: !!process.env.GROQ_API_KEY
     }
   };
 }
@@ -287,5 +355,5 @@ module.exports = {
   getAIStatus,
   getOpenAIResponse,
   getGeminiResponse,
-  getHuggingFaceResponse
+  getGroqResponse
 };

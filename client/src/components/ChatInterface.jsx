@@ -47,18 +47,23 @@ const ChatInterface = () => {
     setIsLoading(true);
 
     try {
-      // Send message to backend
-      const response = await fetch('/api/chat', {
+      // Send message to backend with Groq as preferred AI
+      const response = await fetch('http://localhost:5001/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           message: inputMessage,
-          language: t('language') || 'en'
+          language: t('language') || 'en',
+          preferredAI: 'groq' // Explicitly use Groq
         }),
       });
 
+      if (!response.ok) {
+        throw new Error(`Server responded with status: ${response.status}`);
+      }
+      
       // Check if response is empty before parsing
       const responseText = await response.text();
       if (!responseText) {
@@ -68,15 +73,31 @@ const ChatInterface = () => {
       // Parse the JSON response
       const data = JSON.parse(responseText);
       
+      // Handle different response formats based on current language
+      let messageText = '';
+      const currentLanguage = t('language');
+      
+      if (data.response?.english && data.response?.hindi) {
+        // If we have both languages available, select based on current UI language
+        messageText = currentLanguage === 'hi' ? data.response.hindi : data.response.english;
+      } else if (typeof data.response === 'string') {
+        messageText = data.response;
+      } else if (data.response) {
+        messageText = JSON.stringify(data.response);
+      } else {
+        messageText = t('errorMessage');
+      }
+      
       const botMessage = {
         id: Date.now() + 1,
-        text: data.response || t('errorMessage'),
+        text: messageText,
         sender: 'bot',
         timestamp: new Date(),
         confidence: data.confidence,
         source: data.source,
-        responseType: data.responseType, // Add responseType to track cultural responses
-        suggestions: data.suggestions
+        responseType: data.responseType,
+        aiProvider: data.aiProvider || 'groq', // Add AI provider info
+        suggestions: data.quickReplies || []
       };
 
       setMessages(prev => [...prev, botMessage]);
@@ -84,7 +105,7 @@ const ChatInterface = () => {
       console.error('Error sending message:', error);
       const errorMessage = {
         id: Date.now() + 1,
-        text: t('errorMessage'),
+        text: t('errorMessage') || "Sorry, there was an error processing your request.",
         sender: 'bot',
         timestamp: new Date(),
         type: 'error'

@@ -1,0 +1,4 @@
+[2025-10-08T11:17:57.412Z] ERROR: Error sending WhatsApp message: {"status":401,"code":20003,"moreInfo":"https://www.twilio.com/docs/errors/20003"}
+[2025-10-08T11:19:46.415Z] ERROR: Error sending WhatsApp message: {"status":401,"code":20003,"moreInfo":"https://www.twilio.com/docs/errors/20003"}
+[2025-10-08T11:25:07.254Z] ERROR: Error sending SMS message: {"status":400,"code":21660,"moreInfo":"https://www.twilio.com/docs/errors/21660"}
+[2025-10-08T11:57:53.929Z] ERROR: Error sending SMS message: {"status":400,"code":21211,"moreInfo":"https://www.twilio.com/docs/errors/21211"}

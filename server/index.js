@@ -1,20 +1,22 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
-require('dotenv').config();
 
 const chatRoutes = require('./routes/chat');
 const alertRoutes = require('./routes/alerts');
 const analyticsRoutes = require('./routes/analytics');
 const whatsappRoutes = require('./routes/whatsapp');
+const smsRoutes = require('./routes/sms');
 const vaccinationRoutes = require('./routes/vaccination');
 const symptomCheckerRoutes = require('./routes/symptomChecker');
 const outbreakDetectionRoutes = require('./routes/outbreakDetection');
+const patientRoutes = require('./routes/patients');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Security middleware
 app.use(helmet());
@@ -31,7 +33,7 @@ app.use('/api/', limiter);
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? ['https://your-domain.com'] 
-    : ['http://localhost:3000'],
+    : ['http://localhost:3000', 'http://localhost:5173', 'http://localhost:5174'],
   credentials: true
 }));
 
@@ -57,9 +59,11 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/alerts', alertRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/whatsapp', whatsappRoutes);
+app.use('/api/sms', smsRoutes);
 app.use('/api/vaccination', vaccinationRoutes);
 app.use('/api/symptom-checker', symptomCheckerRoutes);
 app.use('/api/outbreak-detection', outbreakDetectionRoutes);
+app.use('/api/patients', patientRoutes);
 
 // Welcome endpoint
 app.get('/api', (req, res) => {

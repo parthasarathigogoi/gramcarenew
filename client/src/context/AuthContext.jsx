@@ -57,6 +57,19 @@ const mockUsers = [
     ],
     prescriptions: [
       {
+        id: "PRX-2023-11-25",
+        date: "2023-11-25",
+        doctor: "Dr. Mehra",
+        facility: "AIIMS Outreach Clinic, Varanasi",
+        diagnosis: "Seasonal Allergic Rhinitis",
+        medications: [
+          { name: "Cetirizine", dosage: "10mg", frequency: "Once daily at night", duration: "14 days" },
+          { name: "Fluticasone Nasal Spray", dosage: "50mcg", frequency: "2 sprays in each nostril daily", duration: "30 days" },
+          { name: "Montelukast", dosage: "10mg", frequency: "Once daily at bedtime", duration: "30 days" }
+        ],
+        instructions: "Avoid known allergens. Use air purifier if available. Stay hydrated. Return if symptoms worsen or don't improve within 7 days."
+      },
+      {
         id: "PRX-2023-03-15",
         date: "2023-03-15",
         doctor: "Dr. Sharma",

@@ -16,10 +16,6 @@ const {
   isHealthRelated,
   getAIStatus
 } = require('../utils/aiService');
-const {
-  detectFolkRemedy,
-  generateCulturalResponse
-} = require('../utils/folkRemedyService');
 
 // Initialize Google Translate (fallback to mock if no API key)
 let translate;
@@ -38,7 +34,7 @@ const GREETING_MESSAGES = {
   'hi': 'नमस्ते! मैं ग्रामकेयर हूँ, आपका स्वास्थ्य सहायक। आज मैं आपकी कैसे मदद कर सकता हूँ?',
   'bn': 'নমস্কার! আমি গ্রামকেয়ার, আপনার স্বাস্থ্য সহায়ক। আজ আমি কিভাবে আপনাকে সাহায্য করতে পারি?',
   'as': 'নমস্কাৰ! মই গ্ৰামকেয়াৰ, আপোনাৰ স্বাস্থ্য সহায়ক। আজি মই আপোনাক কেনেকৈ সহায় কৰিব পাৰোঁ?',
-  'te': 'నమస్కారం! నేను గ্রামকেयর్, మీ ఆరోగ్య సహాయకుడు। ఈరోజు నేను మీకు ఎలా సహాయం చేయగలను?'
+  'te': 'నమస్కారం! నేను గ্రাమকেयর్, మీ ఆరోగ్య సహాయకుడు। ఈరోజు నేను మీకు ఎలా సహాయం చేయగలను?'
 };
 
 const FALLBACK_MESSAGES = {
@@ -98,7 +94,7 @@ const findBestMatch = (userMessage) => {
 const getGreetingResponse = (language = 'english') => {
   const greetings = {
     english: "Hello! I'm GramCare, your health assistant. I can help you with health questions, vaccination schedules, disease prevention, and outbreak alerts. How can I help you today?",
-    hindi: "नमस्ते! मैं ग्रामकेयर हूं, आपका स्वास्थ्य सहायक। मैं आपकी स्वास्थ्य संबंधी प्रश्नों, टीकाकरण कार्यक्रम, बीमारी की रोकथाम, और प्रकोप अलर्ट में मदद कर सकता हूं। आज मैं आपकी कैसे मदद कर सकता हूं?"
+    hindi: "नमस्ते! मैं ग्रामकेयर हूं, आपका स्वास्थ्य सहायक। मैं आपकी स्वास्थ्य संबंधी प्रश्नों, टीकाकरण कार्यक्रम, बीमारी की रोकथाम, और प्रकोप अलर्ट में मदद कर सकता हूं?"
   };
   
   return greetings[language] || greetings.english;
@@ -117,7 +113,7 @@ const getFallbackResponse = (language = 'english') => {
 // POST /api/chat - Main chat endpoint
 router.post('/', async (req, res) => {
   try {
-    const { message, language = 'english', userId = 'anonymous', sessionId } = req.body;
+    const { message, language = 'english', userId = 'anonymous', sessionId, preferredAI } = req.body;
     
     if (!message || message.trim().length === 0) {
       return res.status(400).json({
@@ -167,40 +163,30 @@ router.post('/', async (req, res) => {
     else {
       let usedAI = false;
       
-      // Check for folk remedies first
-      const detectedRemedy = detectFolkRemedy(userMessage);
-      if (detectedRemedy) {
-        // Generate culturally sensitive response
-        response = await generateCulturalResponse(detectedRemedy, detectedLanguage);
-        responseType = 'cultural';
-        confidence = 0.85;
-      } else {
-        // Check if AI is enabled (removed health-related filtering)
-        const aiEnabled = process.env.AI_ENABLED === 'true';
+      // Always try AI first for any question
+      try {
+        // Use the preferred AI service from request or fallback to env setting
+        const aiServiceToUse = preferredAI || process.env.PREFERRED_AI_SERVICE || 'auto';
         
-        if (aiEnabled) {
-          try {
-            // Try to get AI response for any question
-            aiResponse = await getAIResponse(
-              userMessage, 
-              detectedLanguage, 
-              process.env.PREFERRED_AI_SERVICE || 'auto'
-            );
-            
-            if (aiResponse.success) {
-              response = aiResponse.response;
-              responseType = 'ai';
-              confidence = aiResponse.confidence;
-              usedAI = true;
-            }
-          } catch (error) {
-            console.error('AI Response Error:', error);
-            // Continue to FAQ fallback
-          }
+        // Try to get AI response first for any question
+        aiResponse = await getAIResponse(
+          userMessage, 
+          detectedLanguage, 
+          aiServiceToUse
+        );
+        
+        if (aiResponse.success) {
+          response = aiResponse.response;
+          responseType = 'ai';
+          confidence = aiResponse.confidence;
+          usedAI = true;
         }
+      } catch (error) {
+        console.error('AI Response Error:', error);
+        // Continue to FAQ fallback
       }
       
-      // If AI didn't work or isn't enabled, try FAQ matching
+      // If AI didn't work, try FAQ matching
       if (!usedAI) {
         matchedFAQ = findBestMatch(userMessage);
         
@@ -211,35 +197,13 @@ router.post('/', async (req, res) => {
           responseType = 'faq';
           confidence = 0.7;
         } else {
-          // Final fallback: try AI for any question if enabled
-          if (aiEnabled && !healthRelated) {
-            try {
-              aiResponse = await getAIResponse(
-                `This question seems to be outside health topics, but please provide a brief, helpful response while gently redirecting to health-related questions: "${userMessage}"`,
-                detectedLanguage,
-                process.env.PREFERRED_AI_SERVICE || 'auto'
-              );
-              
-              if (aiResponse.success) {
-                response = aiResponse.response;
-                responseType = 'ai_redirect';
-                confidence = 0.5;
-                usedAI = true;
-              }
-            } catch (error) {
-              console.error('AI Redirect Error:', error);
-            }
-          }
-          
           // Ultimate fallback message
-          if (!usedAI) {
-            response = FALLBACK_MESSAGES[detectedLanguage] || FALLBACK_MESSAGES['en'];
-            if (!FALLBACK_MESSAGES[detectedLanguage]) {
-              response = await getCachedTranslation(FALLBACK_MESSAGES['en'], detectedLanguage);
-            }
-            responseType = 'fallback';
-            confidence = 0.1;
+          response = FALLBACK_MESSAGES[detectedLanguage] || FALLBACK_MESSAGES['en'];
+          if (!FALLBACK_MESSAGES[detectedLanguage]) {
+            response = await getCachedTranslation(FALLBACK_MESSAGES['en'], detectedLanguage);
           }
+          responseType = 'fallback';
+          confidence = 0.1;
         }
       }
     }
@@ -260,7 +224,7 @@ router.post('/', async (req, res) => {
     // In a real app, save to database:
     // await ChatLog.create(chatLog);
     console.log('Chat Log:', chatLog);
-    
+
     // Get quick reply suggestions based on language
 async function getQuickReplies(language) {
   const quickReplies = {

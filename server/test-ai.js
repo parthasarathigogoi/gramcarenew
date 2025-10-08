@@ -32,7 +32,7 @@ async function testAIIntegration() {
   console.log();
   
   // Test AI responses (only if API keys are configured)
-  if (status.openai.configured || status.gemini.configured) {
+  if (status.openai.configured || status.gemini.configured || status.groq.configured) {
     console.log('💬 Testing AI Responses:');
     
     const healthQuestions = [
