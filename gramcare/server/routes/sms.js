@@ -260,7 +260,7 @@ router.post('/webhook', async (req, res) => {
         // Add related quick actions
         if (matchedFAQ.category === 'disease') {
           responseText += language === 'hindi'
-            ? '  💡 सुझाव: "बचाव" टाइप करें रोकथाम के तरीकों के लिए।'
+            ? '  💡 सुझाव: "बचाव" टाइप करें रोकथाम के तरीकें के लिए।'
             : '  💡 Tip: Type "prevention" for prevention methods.';
         }
       } else {
@@ -333,7 +333,7 @@ router.post('/webhook', async (req, res) => {
 router.post('/send', async (req, res) => {
   try {
     const { to, message, language = 'en' } = req.body;
-    
+
     if (!twilioClient) {
       return res.status(400).json({
         error: 'Twilio not configured',
@@ -341,14 +341,14 @@ router.post('/send', async (req, res) => {
         message: 'SMS sending requires Twilio configuration'
       });
     }
-    
+
     if (!to || !message) {
       return res.status(400).json({
         error: 'Phone number and message are required',
         success: false
       });
     }
-    
+
     // Translate message if needed
     let translatedMessage = message;
     if (language !== 'en' && isLanguageSupported(language)) {
@@ -358,9 +358,9 @@ router.post('/send', async (req, res) => {
         logger.error('Translation error:', error);
       }
     }
-    
+
     const sentMessage = await sendSMSMessage(to, translatedMessage);
-    
+
     res.json({
       success: true,
       messageId: sentMessage.sid,
@@ -368,7 +368,7 @@ router.post('/send', async (req, res) => {
       status: sentMessage.status,
       timestamp: new Date().toISOString()
     });
-    
+
   } catch (error) {
     console.error('SMS send error:', error);
     res.status(500).json({
