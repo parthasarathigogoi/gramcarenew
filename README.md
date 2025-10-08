@@ -435,6 +435,8 @@ For enterprise deployments and custom integrations, contact: enterprise@gramcare
 **Made with ❤️ for rural and semi-urban healthcare accessibility**
 
 *GramCare - Bridging the healthcare information gap, one conversation at a time.*# gramcare
-#   g r a m c a r e n e w  
- #   g r a m c a r e n e w  
+#   g r a m c a r e n e w 
+ 
+ #   g r a m c a r e n e w 
+ 
  
