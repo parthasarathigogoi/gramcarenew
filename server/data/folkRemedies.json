@@ -1,0 +1,236 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2023-10-15",
+  "remedies": [
+    {
+      "id": "turmeric_milk",
+      "name": {
+        "en": "Turmeric Milk (Golden Milk)",
+        "hi": "हल्दी वाला दूध",
+        "bn": "হলুদ দুধ"
+      },
+      "description": {
+        "en": "Warm milk with turmeric powder, sometimes with honey and other spices",
+        "hi": "हल्दी पाउडर के साथ गर्म दूध, कभी-कभी शहद और अन्य मसालों के साथ",
+        "bn": "হলুদ গুঁড়া দিয়ে গরম দুধ, কখনও কখনও মধু এবং অন্যান্য মশলা সহ"
+      },
+      "commonUses": [
+        "cold", "cough", "sore throat", "inflammation", "immunity"
+      ],
+      "safetyStatus": "safe",
+      "medicalContext": {
+        "en": "Turmeric contains curcumin which has anti-inflammatory properties. This remedy is generally safe and may help with symptoms, but it's not a replacement for medical treatment for serious conditions.",
+        "hi": "हल्दी में करक्यूमिन होता है जिसमें सूजन-रोधी गुण होते हैं। यह उपाय आमतौर पर सुरक्षित है और लक्षणों में मदद कर सकता है, लेकिन यह गंभीर स्थितियों के लिए चिकित्सा उपचार का विकल्प नहीं है।",
+        "bn": "হলুদে কারকিউমিন থাকে যার প্রদাহ বিরোধী বৈশিষ্ট্য রয়েছে। এই প্রতিকার সাধারণত নিরাপদ এবং উপসর্গে সাহায্য করতে পারে, তবে এটি গুরুতর অবস্থার জন্য চিকিৎসা চিকিত্সার বিকল্প নয়।"
+      },
+      "regions": ["North India", "South India", "Bangladesh", "Nepal"]
+    },
+    {
+      "id": "tulsi_tea",
+      "name": {
+        "en": "Tulsi (Holy Basil) Tea",
+        "hi": "तुलसी की चाय",
+        "bn": "তুলসী চা"
+      },
+      "description": {
+        "en": "Tea made from tulsi (holy basil) leaves, sometimes with ginger and honey",
+        "hi": "तुलसी के पत्तों से बनी चाय, कभी-कभी अदरक और शहद के साथ",
+        "bn": "তুলসী পাতা দিয়ে তৈরি চা, কখনও কখনও আদা এবং মধু সহ"
+      },
+      "commonUses": [
+        "cold", "cough", "fever", "stress", "respiratory issues"
+      ],
+      "safetyStatus": "safe",
+      "medicalContext": {
+        "en": "Tulsi has adaptogenic and antimicrobial properties. This remedy is safe for most people and may help with symptoms, but should not replace prescribed medications for infections or serious conditions.",
+        "hi": "तुलसी में अनुकूलक और रोगाणुरोधी गुण होते हैं। यह उपाय अधिकांश लोगों के लिए सुरक्षित है और लक्षणों में मदद कर सकता है, लेकिन संक्रमण या गंभीर स्थितियों के लिए निर्धारित दवाओं को प्रतिस्थापित नहीं करना चाहिए।",
+        "bn": "তুলসীর অভিযোজনমূলক এবং অণুজীবনাশক বৈশিষ্ট্য রয়েছে। এই প্রতিকার বেশিরভাগ মানুষের জন্য নিরাপদ এবং উপসর্গে সাহায্য করতে পারে, তবে সংক্রমণ বা গুরুতর অবস্থার জন্য নির্ধারিত ওষুধের বিকল্প হওয়া উচিত নয়।"
+      },
+      "regions": ["All India", "Nepal", "Sri Lanka"]
+    },
+    {
+      "id": "neem_skin",
+      "name": {
+        "en": "Neem Paste for Skin",
+        "hi": "त्वचा के लिए नीम का पेस्ट",
+        "bn": "ত্বকের জন্য নিম পেস্ট"
+      },
+      "description": {
+        "en": "Paste made from neem leaves applied to skin",
+        "hi": "नीम के पत्तों से बना पेस्ट त्वचा पर लगाया जाता है",
+        "bn": "নিম পাতা থেকে তৈরি পেস্ট ত্বকে লাগানো হয়"
+      },
+      "commonUses": [
+        "acne", "rashes", "eczema", "fungal infections", "insect bites"
+      ],
+      "safetyStatus": "safe_with_caution",
+      "medicalContext": {
+        "en": "Neem has antimicrobial and anti-inflammatory properties. While generally safe for external use, it may cause irritation in some people. For persistent skin conditions, consult a healthcare provider.",
+        "hi": "नीम में रोगाणुरोधी और सूजन-रोधी गुण होते हैं। हालांकि आमतौर पर बाहरी उपयोग के लिए सुरक्षित है, यह कुछ लोगों में जलन पैदा कर सकता है। लगातार त्वचा की स्थिति के लिए, स्वास्थ्य देखभाल प्रदाता से परामर्श करें।",
+        "bn": "নিমের অণুজীবনাশক এবং প্রদাহ বিরোধী বৈশিষ্ট্য রয়েছে। যদিও বাহ্যিক ব্যবহারের জন্য সাধারণত নিরাপদ, এটি কিছু লোকের মধ্যে জ্বালা সৃষ্টি করতে পারে। দীর্ঘস্থায়ী ত্বকের অবস্থার জন্য, একজন স্বাস্থ্যসেবা প্রদানকারীর সাথে পরামর্শ করুন।"
+      },
+      "regions": ["All India", "Bangladesh", "Pakistan", "Sri Lanka"]
+    },
+    {
+      "id": "ajwain_digestion",
+      "name": {
+        "en": "Ajwain (Carom Seeds) for Digestion",
+        "hi": "पाचन के लिए अजवाइन",
+        "bn": "হজমের জন্য অজোয়ান"
+      },
+      "description": {
+        "en": "Carom seeds chewed or consumed with water for digestive issues",
+        "hi": "पाचन संबंधी समस्याओं के लिए अजवाइन को चबाया या पानी के साथ सेवन किया जाता है",
+        "bn": "হজমের সমস্যার জন্য অজোয়ান চিবিয়ে বা পানির সাথে খাওয়া হয়"
+      },
+      "commonUses": [
+        "indigestion", "bloating", "gas", "stomach ache", "colic"
+      ],
+      "safetyStatus": "safe",
+      "medicalContext": {
+        "en": "Ajwain contains thymol which has carminative properties that can help with gas and bloating. This remedy is generally safe in small amounts but should not replace medical care for chronic digestive issues.",
+        "hi": "अजवाइन में थाइमोल होता है जिसमें वायुनाशक गुण होते हैं जो गैस और सूजन में मदद कर सकते हैं। यह उपाय आमतौर पर छोटी मात्रा में सुरक्षित है लेकिन पुरानी पाचन संबंधी समस्याओं के लिए चिकित्सा देखभाल को प्रतिस्थापित नहीं करना चाहिए।",
+        "bn": "অজোয়ানে থাইমল থাকে যার কার্মিনেটিভ বৈশিষ্ট্য রয়েছে যা গ্যাস এবং ফোলাভাব কমাতে সাহায্য করতে পারে। এই প্রতিকার সাধারণত ছোট পরিমাণে নিরাপদ তবে দীর্ঘস্থায়ী হজমের সমস্যার জন্য চিকিৎসা সেবার বিকল্প হওয়া উচিত নয়।"
+      },
+      "regions": ["North India", "Central India", "Pakistan"]
+    },
+    {
+      "id": "ginger_tea",
+      "name": {
+        "en": "Ginger Tea",
+        "hi": "अदरक की चाय",
+        "bn": "আদা চা"
+      },
+      "description": {
+        "en": "Tea made with fresh or dried ginger, sometimes with honey and lemon",
+        "hi": "ताजा या सूखे अदरक से बनी चाय, कभी-कभी शहद और नींबू के साथ",
+        "bn": "তাজা বা শুকনো আদা দিয়ে তৈরি চা, কখনও কখনও মধু এবং লেবু সহ"
+      },
+      "commonUses": [
+        "nausea", "cold", "sore throat", "motion sickness", "indigestion"
+      ],
+      "safetyStatus": "safe",
+      "medicalContext": {
+        "en": "Ginger contains gingerol which has anti-inflammatory and anti-nausea properties. This remedy is generally safe and effective for mild symptoms but should not replace anti-emetics for severe nausea or vomiting, especially during pregnancy.",
+        "hi": "अदरक में जिंजेरोल होता है जिसमें सूजन-रोधी और मतली-रोधी गुण होते हैं। यह उपाय आमतौर पर हल्के लक्षणों के लिए सुरक्षित और प्रभावी है लेकिन गंभीर मतली या उल्टी के लिए एंटी-एमेटिक्स को प्रतिस्थापित नहीं करना चाहिए, विशेष रूप से गर्भावस्था के दौरान।",
+        "bn": "আদাতে জিঞ্জেরল থাকে যার প্রদাহ বিরোধী এবং বমি বিরোধী বৈশিষ্ট্য রয়েছে। এই প্রতিকার সাধারণত হালকা উপসর্গের জন্য নিরাপদ এবং কার্যকর তবে গুরুতর বমি বা বমি ভাবের জন্য অ্যান্টি-এমেটিকসের বিকল্প হওয়া উচিত নয়, বিশেষ করে গর্ভাবস্থায়।"
+      },
+      "regions": ["All India", "Bangladesh", "Nepal", "Sri Lanka", "Pakistan"]
+    },
+    {
+      "id": "mustard_oil_massage",
+      "name": {
+        "en": "Mustard Oil Massage",
+        "hi": "सरसों के तेल की मालिश",
+        "bn": "সরিষার তেল মালিশ"
+      },
+      "description": {
+        "en": "Warming massage with mustard oil, sometimes with garlic or other herbs",
+        "hi": "सरसों के तेल से गर्म मालिश, कभी-कभी लहसुन या अन्य जड़ी-बूटियों के साथ",
+        "bn": "সরিষার তেল দিয়ে উষ্ণ মালিশ, কখনও কখনও রসুন বা অন্যান্য ভেষজ সহ"
+      },
+      "commonUses": [
+        "muscle pain", "joint pain", "cold", "congestion", "circulation"
+      ],
+      "safetyStatus": "safe_with_caution",
+      "medicalContext": {
+        "en": "Mustard oil has warming properties that may help with muscle pain and circulation. However, it should not be used on broken skin or by people with certain skin conditions. For persistent pain, consult a healthcare provider.",
+        "hi": "सरसों के तेल में गर्म करने वाले गुण होते हैं जो मांसपेशियों के दर्द और रक्त संचार में मदद कर सकते हैं। हालांकि, इसका उपयोग टूटी त्वचा पर या कुछ त्वचा की स्थितियों वाले लोगों द्वारा नहीं किया जाना चाहिए। लगातार दर्द के लिए, स्वास्थ्य देखभाल प्रदाता से परामर्श करें।",
+        "bn": "সরিষার তেলের উষ্ণ বৈশিষ্ট্য রয়েছে যা পেশী ব্যথা এবং রক্ত সঞ্চালনে সাহায্য করতে পারে। তবে, এটি ভাঙ্গা ত্বকে বা নির্দিষ্ট ত্বকের অবস্থা সহ লোকদের দ্বারা ব্যবহার করা উচিত নয়। দীর্ঘস্থায়ী ব্যথার জন্য, একজন স্বাস্থ্যসেবা প্রদানকারীর সাথে পরামর্শ করুন।"
+      },
+      "regions": ["North India", "East India", "Bangladesh"]
+    },
+    {
+      "id": "ashwagandha",
+      "name": {
+        "en": "Ashwagandha",
+        "hi": "अश्वगंधा",
+        "bn": "অশ্বগন্ধা"
+      },
+      "description": {
+        "en": "Root powder consumed with milk or water",
+        "hi": "दूध या पानी के साथ सेवन किया जाने वाला जड़ का पाउडर",
+        "bn": "দুধ বা পানির সাথে খাওয়া মূল গুঁড়া"
+      },
+      "commonUses": [
+        "stress", "anxiety", "fatigue", "weakness", "insomnia"
+      ],
+      "safetyStatus": "safe_with_caution",
+      "medicalContext": {
+        "en": "Ashwagandha is an adaptogen that may help with stress and anxiety. However, it may interact with certain medications and should be avoided during pregnancy. Consult a healthcare provider before using, especially if you have any medical conditions.",
+        "hi": "अश्वगंधा एक अनुकूलक है जो तनाव और चिंता में मदद कर सकता है। हालांकि, यह कुछ दवाओं के साथ प्रतिक्रिया कर सकता है और गर्भावस्था के दौरान इससे बचना चाहिए। उपयोग करने से पहले स्वास्थ्य देखभाल प्रदाता से परामर्श करें, विशेष रूप से यदि आपको कोई चिकित्सा स्थिति है।",
+        "bn": "অশ্বগন্ধা একটি অ্যাডাপ্টোজেন যা চাপ এবং উদ্বেগে সাহায্য করতে পারে। তবে, এটি নির্দিষ্ট ওষুধের সাথে মিথস্ক্রিয়া করতে পারে এবং গর্ভাবস্থায় এড়ানো উচিত। ব্যবহার করার আগে একজন স্বাস্থ্যসেবা প্রদানকারীর সাথে পরামর্শ করুন, বিশেষ করে যদি আপনার কোনো চিকিৎসা অবস্থা থাকে।"
+      },
+      "regions": ["All India", "Nepal"]
+    },
+    {
+      "id": "aloe_vera_burns",
+      "name": {
+        "en": "Aloe Vera for Burns",
+        "hi": "जलन के लिए एलोवेरा",
+        "bn": "পোড়ার জন্য অ্যালোভেরা"
+      },
+      "description": {
+        "en": "Fresh aloe vera gel applied to minor burns or sunburns",
+        "hi": "मामूली जलन या सनबर्न पर लगाया जाने वाला ताजा एलोवेरा जेल",
+        "bn": "সামান্য পোড়া বা সানবার্নে লাগানো তাজা অ্যালোভেরা জেল"
+      },
+      "commonUses": [
+        "minor burns", "sunburn", "skin irritation", "cuts", "abrasions"
+      ],
+      "safetyStatus": "safe",
+      "medicalContext": {
+        "en": "Aloe vera has cooling and anti-inflammatory properties that can help with minor burns and skin irritation. For serious burns (blistering, covering large areas, or on the face), seek immediate medical attention.",
+        "hi": "एलोवेरा में शीतलन और सूजन-रोधी गुण होते हैं जो मामूली जलन और त्वचा की जलन में मदद कर सकते हैं। गंभीर जलन (छाले, बड़े क्षेत्रों को कवर करना, या चेहरे पर) के लिए, तुरंत चिकित्सा सहायता लें।",
+        "bn": "অ্যালোভেরার শীতল এবং প্রদাহ বিরোধী বৈশিষ্ট্য রয়েছে যা সামান্য পোড়া এবং ত্বকের জ্বালায় সাহায্য করতে পারে। গুরুতর পোড়ার জন্য (ফোসকা, বড় এলাকা জুড়ে, বা মুখে), অবিলম্বে চিকিৎসা সহায়তা নিন।"
+      },
+      "regions": ["All India", "Bangladesh", "Pakistan", "Sri Lanka", "Nepal"]
+    },
+    {
+      "id": "camphor_vicks",
+      "name": {
+        "en": "Camphor/Vicks for Congestion",
+        "hi": "भीड़ के लिए कपूर/विक्स",
+        "bn": "কনজেশনের জন্য কর্পূর/ভিক্স"
+      },
+      "description": {
+        "en": "Camphor or mentholated balm applied to chest, neck, or under nose",
+        "hi": "छाती, गर्दन, या नाक के नीचे लगाया जाने वाला कपूर या मेंथोलयुक्त मरहम",
+        "bn": "বুক, ঘাড়, বা নাকের নীচে লাগানো কর্পূর বা মেনথলযুক্ত মলম"
+      },
+      "commonUses": [
+        "congestion", "cold", "cough", "headache", "muscle pain"
+      ],
+      "safetyStatus": "safe_with_caution",
+      "medicalContext": {
+        "en": "Camphor and menthol can provide temporary relief from congestion and cough. However, they should not be ingested, applied to broken skin, or used on children under 2 years. For persistent respiratory symptoms, consult a healthcare provider.",
+        "hi": "कपूर और मेंथॉल भीड़ और खांसी से अस्थायी राहत प्रदान कर सकते हैं। हालांकि, इन्हें निगला नहीं जाना चाहिए, टूटी त्वचा पर लगाया नहीं जाना चाहिए, या 2 साल से कम उम्र के बच्चों पर उपयोग नहीं किया जाना चाहिए। लगातार श्वसन लक्षणों के लिए, स्वास्थ्य देखभाल प्रदाता से परामर्श करें।",
+        "bn": "কর্পূর এবং মেনথল কনজেশন এবং কাশি থেকে অস্থায়ী উপশম দিতে পারে। তবে, এগুলি গিলে ফেলা উচিত নয়, ভাঙ্গা ত্বকে লাগানো উচিত নয়, বা ২ বছরের কম বয়সী শিশুদের উপর ব্যবহার করা উচিত নয়। দীর্ঘস্থায়ী শ্বাসযন্ত্রের উপসর্গের জন্য, একজন স্বাস্থ্যসেবা প্রদানকারীর সাথে পরামর্শ করুন।"
+      },
+      "regions": ["All India", "Bangladesh", "Pakistan", "Nepal"]
+    },
+    {
+      "id": "jeera_water",
+      "name": {
+        "en": "Cumin (Jeera) Water",
+        "hi": "जीरा पानी",
+        "bn": "জিরা পানি"
+      },
+      "description": {
+        "en": "Water boiled with cumin seeds, sometimes with ajwain or fennel",
+        "hi": "जीरा के साथ उबला हुआ पानी, कभी-कभी अजवाइन या सौंफ के साथ",
+        "bn": "জিরা দিয়ে ফোটানো পানি, কখনও কখনও অজোয়ান বা মৌরি সহ"
+      },
+      "commonUses": [
+        "digestion", "bloating", "gas", "weight management", "metabolism"
+      ],
+      "safetyStatus": "safe",
+      "medicalContext": {
+        "en": "Cumin water may help with digestion and bloating due to its carminative properties. This remedy is generally safe but should not replace medical care for chronic digestive issues or be relied upon for weight loss.",
+        "hi": "जीरा पानी अपने वायुनाशक गुणों के कारण पाचन और सूजन में मदद कर सकता है। यह उपाय आमतौर पर सुरक्षित है लेकिन पुरानी पाचन संबंधी समस्याओं के लिए चिकित्सा देखभाल को प्रतिस्थापित नहीं करना चाहिए या वजन घटाने के लिए इस पर निर्भर नहीं होना चाहिए।",
+        "bn": "জিরা পানি এর কার্মিনেটিভ বৈশিষ্ট্যের কারণে হজম এবং ফোলাভাব কমাতে সাহায্য করতে পারে। এই প্রতিকার সাধারণত নিরাপদ তবে দীর্ঘস্থায়ী হজমের সমস্যার জন্য চিকিৎসা সেবার বিকল্প হওয়া উচিত নয় বা ওজন কমানোর জন্য এর উপর নির্ভর করা উচিত নয়।"
+      },
+      "regions": ["North India", "Central India", "Pakistan"]
+    }
+  ]
+}

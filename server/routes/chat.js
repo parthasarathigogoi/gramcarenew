@@ -16,6 +16,10 @@ const {
   isHealthRelated,
   getAIStatus
 } = require('../utils/aiService');
+const {
+  detectFolkRemedy,
+  generateCulturalResponse
+} = require('../utils/folkRemedyService');
 
 // Initialize Google Translate (fallback to mock if no API key)
 let translate;
@@ -163,27 +167,36 @@ router.post('/', async (req, res) => {
     else {
       let usedAI = false;
       
-      // Check if AI is enabled (removed health-related filtering)
-      const aiEnabled = process.env.AI_ENABLED === 'true';
-      
-      if (aiEnabled) {
-        try {
-          // Try to get AI response first for any question
-          aiResponse = await getAIResponse(
-            userMessage, 
-            detectedLanguage, 
-            process.env.PREFERRED_AI_SERVICE || 'auto'
-          );
-          
-          if (aiResponse.success) {
-            response = aiResponse.response;
-            responseType = 'ai';
-            confidence = aiResponse.confidence;
-            usedAI = true;
+      // Check for folk remedies first
+      const detectedRemedy = detectFolkRemedy(userMessage);
+      if (detectedRemedy) {
+        // Generate culturally sensitive response
+        response = await generateCulturalResponse(detectedRemedy, detectedLanguage);
+        responseType = 'cultural';
+        confidence = 0.85;
+      } else {
+        // Check if AI is enabled (removed health-related filtering)
+        const aiEnabled = process.env.AI_ENABLED === 'true';
+        
+        if (aiEnabled) {
+          try {
+            // Try to get AI response for any question
+            aiResponse = await getAIResponse(
+              userMessage, 
+              detectedLanguage, 
+              process.env.PREFERRED_AI_SERVICE || 'auto'
+            );
+            
+            if (aiResponse.success) {
+              response = aiResponse.response;
+              responseType = 'ai';
+              confidence = aiResponse.confidence;
+              usedAI = true;
+            }
+          } catch (error) {
+            console.error('AI Response Error:', error);
+            // Continue to FAQ fallback
           }
-        } catch (error) {
-          console.error('AI Response Error:', error);
-          // Continue to FAQ fallback
         }
       }
       

@@ -5,6 +5,7 @@ const { getCachedTranslation } = require('./translator');
 // Initialize AI clients
 let openai = null;
 let gemini = null;
+let huggingFaceToken = null;
 
 // Initialize OpenAI
 if (process.env.OPENAI_API_KEY) {
@@ -23,6 +24,14 @@ if (process.env.GEMINI_API_KEY) {
   console.log('Google Gemini initialized successfully');
 } else {
   console.warn('Gemini API key not found. Gemini features will be disabled.');
+}
+
+// Initialize Hugging Face
+if (process.env.HUGGINGFACE_API_KEY) {
+  huggingFaceToken = process.env.HUGGINGFACE_API_KEY;
+  console.log('Hugging Face initialized successfully');
+} else {
+  console.warn('Hugging Face API key not found. Hugging Face features will be disabled.');
 }
 
 // Health-focused system prompt
@@ -49,7 +58,7 @@ If asked about non-health topics, politely redirect to health-related questions.
  * Get AI response using the preferred AI service
  * @param {string} userMessage - The user's message
  * @param {string} language - Target language for response
- * @param {string} preferredAI - 'openai' or 'gemini' or 'auto'
+ * @param {string} preferredAI - 'openai', 'gemini', 'huggingface', or 'auto'
  * @returns {Promise<Object>} AI response with metadata
  */
 async function getAIResponse(userMessage, language = 'en', preferredAI = 'auto') {
@@ -64,9 +73,15 @@ async function getAIResponse(userMessage, language = 'en', preferredAI = 'auto')
     } else if (preferredAI === 'gemini' && gemini) {
       response = await getGeminiResponse(userMessage, language);
       aiProvider = 'gemini';
+    } else if (preferredAI === 'huggingface' && huggingFaceToken) {
+      response = await getHuggingFaceResponse(userMessage, language);
+      aiProvider = 'huggingface';
     } else {
-      // Auto-select: try Gemini first (free tier), fallback to OpenAI
-      if (gemini) {
+      // Auto-select: try Hugging Face first (free), then Gemini, fallback to OpenAI
+      if (huggingFaceToken) {
+        response = await getHuggingFaceResponse(userMessage, language);
+        aiProvider = 'huggingface';
+      } else if (gemini) {
         response = await getGeminiResponse(userMessage, language);
         aiProvider = 'gemini';
       } else if (openai) {
@@ -94,6 +109,34 @@ async function getAIResponse(userMessage, language = 'en', preferredAI = 'auto')
       aiProvider: null,
       confidence: 0
     };
+  }
+}
+
+/**
+ * Get Hugging Face response for medical queries
+ * @param {string} userMessage - The user's message
+ * @param {string} language - Target language for response
+ * @returns {Promise<Object>} Hugging Face response
+ */
+async function getHuggingFaceResponse(userMessage, language) {
+  try {
+    const { getMedicalResponse } = require('./huggingFaceService');
+    
+    const response = await getMedicalResponse(userMessage, language);
+    
+    if (response.success) {
+      return {
+        content: response.response,
+        confidence: response.confidence || 0.7,
+        source: response.source || 'huggingface'
+      };
+    } else {
+      throw new Error(response.error || 'Hugging Face service failed');
+    }
+    
+  } catch (error) {
+    console.error('Hugging Face Response Error:', error);
+    throw error;
   }
 }
 
@@ -230,6 +273,10 @@ function getAIStatus() {
     gemini: {
       available: !!gemini,
       configured: !!process.env.GEMINI_API_KEY
+    },
+    huggingface: {
+      available: !!huggingFaceToken,
+      configured: !!process.env.HUGGINGFACE_API_KEY
     }
   };
 }
@@ -239,5 +286,6 @@ module.exports = {
   isHealthRelated,
   getAIStatus,
   getOpenAIResponse,
-  getGeminiResponse
+  getGeminiResponse,
+  getHuggingFaceResponse
 };
