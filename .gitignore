@@ -1,0 +1,39 @@
+# Environments
+.env
+gramcare/.env
+gramcare/server/.env
+
+# Node modules
+node_modules
+gramcare/node_modules
+gramcare/server/node_modules
+
+# Logs
+*.log
+gramcare/*.log
+gramcare/server/*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# macOS files
+.DS_Store
+
+# npm package lock files
+package-lock.json
+gramcare/package-lock.json
+gramcare/server/package-lock.json
+
+# Docker
+docker-compose.yml
+gramcare/docker-compose.yml
+gramcare/server/docker-compose.yml
+
+# Other
+Makefile
+gramcare/Makefile
+gramcare/server/Makefile
+README.md
+gramcare/README.md
+gramcare/server/README.md

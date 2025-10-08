@@ -1,0 +1,126 @@
+{
+  "faqs": [
+    {
+      "id": "dengue_symptoms",
+      "keywords": ["dengue", "symptoms", "fever", "डेंगू", "लक्षण"],
+      "question": "What are dengue symptoms?",
+      "answer": {
+        "english": "Dengue symptoms include high fever (40°C/104°F), severe headache, eye pain, muscle and joint pain, and skin rash. Seek immediate medical attention if you experience severe abdominal pain, persistent vomiting, or bleeding.",
+        "hindi": "डेंगू के लक्षणों में तेज बुखार (40°C/104°F), गंभीर सिरदर्द, आंखों में दर्द, मांसपेशियों और जोड़ों में दर्द, और त्वचा पर दाने शामिल हैं। यदि आपको गंभीर पेट दर्द, लगातार उल्टी, या रक्तस्राव का अनुभव हो तो तुरंत चिकित्सा सहायता लें।"
+      },
+      "category": "disease"
+    },
+    {
+      "id": "malaria_prevention",
+      "keywords": ["malaria", "prevention", "mosquito", "मलेरिया", "बचाव"],
+      "question": "How to prevent malaria?",
+      "answer": {
+        "english": "Prevent malaria by using mosquito nets while sleeping, applying mosquito repellents, wearing long-sleeved clothes, removing stagnant water around your home, and taking antimalarial medicines if recommended by a doctor.",
+        "hindi": "मलेरिया से बचने के लिए सोते समय मच्छरदानी का उपयोग करें, मच्छर भगाने वाली दवा लगाएं, लंबी आस्तीन के कपड़े पहनें, अपने घर के आसपास रुके हुए पानी को हटाएं, और डॉक्टर की सलाह पर मलेरिया रोधी दवाएं लें।"
+      },
+      "category": "prevention"
+    },
+    {
+      "id": "polio_vaccine",
+      "keywords": ["polio", "vaccine", "drops", "पोलियो", "टीका"],
+      "question": "When is polio vaccine due?",
+      "answer": {
+        "english": "Polio vaccine (OPV drops) is given at birth, 6 weeks, 10 weeks, and 14 weeks of age. Additional booster doses are given at 16-24 months and 5 years. Ensure your child gets all doses on time.",
+        "hindi": "पोलियो का टीका (OPV बूंदें) जन्म के समय, 6 सप्ताह, 10 सप्ताह, और 14 सप्ताह की उम्र में दिया जाता है। अतिरिक्त बूस्टर खुराक 16-24 महीने और 5 साल की उम्र में दी जाती है। सुनिश्चित करें कि आपके बच्चे को सभी खुराकें समय पर मिलें।"
+      },
+      "category": "vaccination"
+    },
+    {
+      "id": "diarrhea_child",
+      "keywords": ["diarrhea", "child", "ors", "दस्त", "बच्चा"],
+      "question": "What to do if child has diarrhea?",
+      "answer": {
+        "english": "Give ORS (Oral Rehydration Solution) frequently, continue breastfeeding, give zinc tablets if available, avoid sugary drinks, and see a doctor if the child shows signs of dehydration, blood in stool, or high fever.",
+        "hindi": "बार-बार ORS (मौखिक पुनर्जलीकरण घोल) दें, स्तनपान जारी रखें, यदि उपलब्ध हो तो जिंक की गोलियां दें, मीठे पेय से बचें, और यदि बच्चे में निर्जलीकरण, मल में खून, या तेज बुखार के लक्षण दिखें तो डॉक्टर को दिखाएं।"
+      },
+      "category": "treatment"
+    },
+    {
+      "id": "tb_symptoms",
+      "keywords": ["tb", "tuberculosis", "cough", "टीबी", "खांसी"],
+      "question": "What are TB symptoms?",
+      "answer": {
+        "english": "TB symptoms include persistent cough for more than 2 weeks, coughing up blood, chest pain, weakness, weight loss, fever, and night sweats. Get tested immediately if you have these symptoms.",
+        "hindi": "टीबी के लक्षणों में 2 सप्ताह से अधिक समय तक लगातार खांसी, खून की खांसी, सीने में दर्द, कमजोरी, वजन कम होना, बुखार, और रात को पसीना आना शामिल है। यदि आपमें ये लक्षण हैं तो तुरंत जांच कराएं।"
+      },
+      "category": "disease"
+    },
+    {
+      "id": "vaccination_schedule",
+      "keywords": ["vaccination", "schedule", "immunization", "टीकाकरण", "समय सारणी"],
+      "question": "What is the vaccination schedule for children?",
+      "answer": {
+        "english": "Birth: BCG, OPV, Hepatitis B. 6 weeks: DPT, OPV, Hepatitis B. 10 weeks: DPT, OPV. 14 weeks: DPT, OPV. 9 months: Measles. 16-24 months: DPT, OPV, Measles booster. Follow your local health center's schedule.",
+        "hindi": "जन्म: BCG, OPV, हेपेटाइटिस B। 6 सप्ताह: DPT, OPV, हेपेटाइटिस B। 10 सप्ताह: DPT, OPV। 14 सप्ताह: DPT, OPV। 9 महीने: खसरा। 16-24 महीने: DPT, OPV, खसरा बूस्टर। अपने स्थानीय स्वास्थ्य केंद्र की समय सारणी का पालन करें।"
+      },
+      "category": "vaccination"
+    },
+    {
+      "id": "clean_water",
+      "keywords": ["water", "clean", "boil", "पानी", "साफ"],
+      "question": "How to ensure clean drinking water?",
+      "answer": {
+        "english": "Boil water for 1 minute before drinking, use water purification tablets, store water in clean covered containers, avoid drinking from unknown sources, and clean water storage containers regularly.",
+        "hindi": "पीने से पहले पानी को 1 मिनट तक उबालें, पानी शुद्धीकरण की गोलियों का उपयोग करें, पानी को साफ ढके हुए बर्तनों में रखें, अज्ञात स्रोतों से पानी पीने से बचें, और पानी भंडारण के बर्तनों को नियमित रूप से साफ करें।"
+      },
+      "category": "prevention"
+    },
+    {
+      "id": "hand_hygiene",
+      "keywords": ["hand", "wash", "hygiene", "हाथ", "धोना"],
+      "question": "When should I wash my hands?",
+      "answer": {
+        "english": "Wash hands with soap for 20 seconds before eating, after using toilet, after coughing/sneezing, before touching your face, after touching animals, and when hands are visibly dirty.",
+        "hindi": "खाने से पहले, शौचालय का उपयोग करने के बाद, खांसने/छींकने के बाद, अपना चेहरा छूने से पहले, जानवरों को छूने के बाद, और जब हाथ गंदे दिखें तो 20 सेकंड तक साबुन से हाथ धोएं।"
+      },
+      "category": "prevention"
+    },
+    {
+      "id": "fever_treatment",
+      "keywords": ["fever", "temperature", "बुखार", "तापमान"],
+      "question": "How to treat fever at home?",
+      "answer": {
+        "english": "Give paracetamol as per age/weight, use lukewarm water sponging, ensure adequate fluid intake, dress in light clothes, and seek medical help if fever is above 102°F or persists for more than 3 days.",
+        "hindi": "उम्र/वजन के अनुसार पैरासिटामोल दें, हल्के गुनगुने पानी से पोंछें, पर्याप्त तरल पदार्थ का सेवन सुनिश्चित करें, हल्के कपड़े पहनाएं, और यदि बुखार 102°F से अधिक हो या 3 दिन से अधिक बना रहे तो चिकित्सा सहायता लें।"
+      },
+      "category": "treatment"
+    },
+    {
+      "id": "nearest_health_center",
+      "keywords": ["health center", "phc", "hospital", "स्वास्थ्य केंद्र", "अस्पताल"],
+      "question": "Where is the nearest health center?",
+      "answer": {
+        "english": "Contact your local ASHA worker, visit the nearest Primary Health Center (PHC), call 108 for emergency ambulance, or ask at your village panchayat office for health facility locations.",
+        "hindi": "अपने स्थानीय आशा कार्यकर्ता से संपर्क करें, निकटतम प्राथमिक स्वास्थ्य केंद्र (PHC) जाएं, आपातकालीन एम्बुलेंस के लिए 108 पर कॉल करें, या स्वास्थ्य सुविधाओं के स्थान के लिए अपने गांव के पंचायत कार्यालय में पूछें।"
+      },
+      "category": "general"
+    }
+  ],
+  "quickReplies": [
+    {
+      "text": "Vaccines 💉",
+      "keywords": ["vaccination", "vaccine", "immunization"]
+    },
+    {
+      "text": "Prevention 🛡️",
+      "keywords": ["prevention", "hygiene", "clean"]
+    },
+    {
+      "text": "Symptoms 🤒",
+      "keywords": ["symptoms", "fever", "cough"]
+    },
+    {
+      "text": "Treatment 💊",
+      "keywords": ["treatment", "medicine", "cure"]
+    },
+    {
+      "text": "Alerts 🚨",
+      "keywords": ["alerts", "outbreak", "emergency"]
+    }
+  ]
+}
